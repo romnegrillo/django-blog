@@ -1,6 +1,6 @@
 # Python Download URL Images
 
-![Django-Logo](/django_logo.png?raw=true)
+![Django-Logo](/django_logo.png?raw=true | width=100)
 
 ### About
 
@@ -31,11 +31,15 @@ or you configured your system to use pip3 command then:
 ```pip3 install -r requirements.txt```
 
 To run the server, type:
+
 ```python manage.py runserver```
+
 or if you configured your system to use python3 command then:
+
 ```python3 manage.py runserver```
 
 Then access it through your browser by the address:
+
 ```localhost:8000```
 
 ### Credits
