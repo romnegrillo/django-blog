@@ -1,6 +1,6 @@
 # Python Download URL Images
 
-![Django-Logo](/django_logo.png?raw=true | width=100)
+![Django-Logo](/django_logo.png | width=100)
 
 ### About
 
