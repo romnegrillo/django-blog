@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
+# Sample hardcoded.
 posts = [
      {
         "author": "Gusion",
@@ -17,7 +19,12 @@ posts = [
  ]
 
 
+
+
 def home(request):
+    # Actual from the database.
+    posts = Post.objects.all()
+
     return render(request, "blog/home.html", {"posts": posts})
 
 def about(request):
