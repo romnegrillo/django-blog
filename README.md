@@ -1,6 +1,6 @@
-# Python Download URL Images
-
-![Django-Logo](/django_logo.png | width=100)
+# Python Django Blog
+ 
+<img src="/django_logo.png " width="350" alt = "Django-Logo">
 
 ### About
 
