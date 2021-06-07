@@ -7,7 +7,8 @@
 Still in progress...
 
 This is my first full-featured web application written using Django 
-Python Framework. This is a blog app where most of the common functionalities of a web application can be built such as:
+Python Framework. This is a blog app where most of the common functionalities 
+of a web application can be built such as:
 
 * Model-View-Template design pattern. 
 * User registration.
@@ -20,7 +21,7 @@ Python Framework. This is a blog app where most of the common functionalities of
 * CRUD operations for admin.
 * File upload.
 * Connect to Amazon Web Services. 
-* Deployment
+* Deployment.
 
 ### How to Use
 
