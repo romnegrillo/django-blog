@@ -12,6 +12,7 @@ Python Framework. This is a blog app where most of the common functionalities of
 * Model-View-Template design pattern. 
 * User registration.
 * User authentication.
+* User forgot password email reset.
 * Database.
 * Object Relational Mapping.
 * Jinja.
