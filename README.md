@@ -1,6 +1,6 @@
-# Python Download URL Images
-
-![Django-Logo](/django_logo.png?raw=true)
+# Python Django Blog
+ 
+<img src="/django_logo.png " width="350" alt = "Django-Logo">
 
 ### About
 
@@ -13,6 +13,7 @@ of a web application can be built such as:
 * Model-View-Template design pattern. 
 * User registration.
 * User authentication.
+* User forgot password email reset.
 * Database.
 * Object Relational Mapping.
 * Jinja.
@@ -32,11 +33,15 @@ or you configured your system to use pip3 command then:
 ```pip3 install -r requirements.txt```
 
 To run the server, type:
+
 ```python manage.py runserver```
+
 or if you configured your system to use python3 command then:
+
 ```python3 manage.py runserver```
 
 Then access it through your browser by the address:
+
 ```localhost:8000```
 
 ### Credits
