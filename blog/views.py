@@ -69,7 +69,7 @@ def edit_post(request, post_id):
         # the user from the post. If not return
         # forbidden error.
         if post.author != request.user:
-            return HttpResponseForbidden()
+            return HttpResponseForbidden("<h1>403 Forbidden</h1>")
 
 
         # This will automaticallt set the fields of
@@ -89,7 +89,7 @@ def edit_post(request, post_id):
         # the user from the post. If not return
         # forbidden error.
         if post.author != request.user:
-            return HttpResponseForbidden()
+            return HttpResponseForbidden("<h1>403 Forbidden</h1>")
 
         # Create the form with that instance post.
         # This will automaticallt set the fields of
@@ -98,4 +98,25 @@ def edit_post(request, post_id):
       
         
     return render(request, "blog/edit.html", {"form": form})
+
+
+def delete_post(request, post_id):
+
+    # Get the current post first base on the ID.
+    post = Post.objects.get(pk = post_id)
+
+    if post.author != request.user:
+        return HttpResponseForbidden("<h1>403 Forbidden</h1>")
+
+    if request.POST.get("delete-post-btn"):
+        #print("Delete button pressed.")
+        post.delete()
+        messages.success(request, "Your post has been deleted.")
+        return redirect("blog-home")
+    else:
+        #print("Delete button not pressed.")
+        pass
+
+
+    return render(request, "blog/delete.html", {"post": post})
 
