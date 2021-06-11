@@ -10,19 +10,19 @@ This is my first full-featured web application written using Django
 Python Framework. This is a blog app where most of the common functionalities 
 of a web application can be built such as:
 
-* Model-View-Template design pattern. 
-* User registration.
-* User authentication.
-* User forgot password email reset.
-* Database.
-* Object Relational Mapping.
-* Jinja.
-* Bootstrap.
-* CRUD operation for users.
-* CRUD operations for admin.
-* File upload.
-* Connect to Amazon Web Services. 
-* Deployment.
+- [x] Model-View-Template design pattern. 
+- [x] User registration.
+- [x] User authentication.
+- [x] User forgot password email reset.
+- [x] Database.
+- [x] Object Relational Mapping.
+- [x] Jinja.
+- [x] Bootstrap.
+- [x] CRUD operation for users.
+- [x] CRUD operations for admin.
+- [x] File upload.
+- [ ] Connect to Amazon Web Services. 
+- [ ] Deployment.
 
 ### How to Use
 
@@ -43,7 +43,3 @@ or if you configured your system to use python3 command then:
 Then access it through your browser by the address:
 
 ```localhost:8000```
-
-### Credits
-
-I've learned this from Sir Corey Schafer in his YouTube Channel.
