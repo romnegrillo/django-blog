@@ -4,6 +4,8 @@ from .models import Post
 from .forms import NewPostForm, EditPostForm
 from django.contrib import messages
 from django.http import HttpResponseForbidden
+from django.contrib.auth.models import User
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Sample hardcoded.
 posts = [
@@ -25,7 +27,19 @@ posts = [
 def home(request):
 
     # Actual from the database.
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by("-date_posted")
+
+    # Display 3 items per page only.
+    paginator = Paginator(posts, 3)
+
+    page = request.GET.get('page', 1)
+    
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
 
     return render(request, "blog/home.html", {"posts": posts})
 
@@ -40,7 +54,30 @@ def post(request, post_id):
     # it to the render function to display
     # that particular post.
     post = Post.objects.get(pk = post_id)
+
     return render(request, "blog/post.html", {"post": post})
+
+def post_user(request, user_id):
+
+    # Get the user id in the url so we can get the 
+    # author object and use it as a filter to get
+    # all the post of that user.
+    author = User.objects.get(id = user_id)
+    posts = Post.objects.filter(author = author).order_by("-date_posted")
+
+     # Display 3 items per page only.
+    paginator = Paginator(posts, 3)
+
+    page = request.GET.get('page', 1)
+    
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, "blog/home.html", {"posts": posts})
 
 def create_post(request):
 
