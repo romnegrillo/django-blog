@@ -43,7 +43,3 @@ or if you configured your system to use python3 command then:
 Then access it through your browser by the address:
 
 ```localhost:8000```
-
-### Credits
-
-I've learned this from Sir Corey Schafer in his YouTube Channel.
