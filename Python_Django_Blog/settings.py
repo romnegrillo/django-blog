@@ -123,14 +123,37 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Added to use the crispy forms.
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+# Changes login redirect url when a user logged in.
 LOGIN_REDIRECT_URL = "blog-home"
+
+# Changes the default login url when a user visited 
+# a page that should be accessed when logged in.
 LOGIN_URL = "login"
 
+# Changes the directory where uploaded files are 
+# placed. The default is at the root folder
+# of the project.
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
  
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+ # Email backend test. It won't send an email, just save the 
+ # email to be send in the "sent_email" folders located at the root
+ # project's folder.
+#EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+#EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+
+# Test of Gmail mail server to actually send email.
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# This should be private, that is why I included it in
+# environment variable rather than typing it here.
+# You need to allow less secure apps.
+EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")
