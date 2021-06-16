@@ -21,7 +21,7 @@ of a web application can be built such as:
 - [x] CRUD operation for users.
 - [x] CRUD operations for admin.
 - [x] File upload.
-- [ ] Connect to Amazon Web Services. 
+- [ ] Connect to files Amazon Web Services. 
 - [ ] Deployment.
 
 ### How to Use
@@ -43,3 +43,8 @@ or if you configured your system to use python3 command then:
 Then access it through your browser by the address:
 
 ```localhost:8000```
+
+### Sample Output
+
+<img src="/django_blog.PNG " width="1000px" alt = "Django-Logo">
+
