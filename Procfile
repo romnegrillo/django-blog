@@ -1,0 +1,1 @@
+web: gunicorn Python_Django_Blog.wsgi
